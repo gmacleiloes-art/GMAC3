@@ -1,0 +1,15 @@
+<svg width="1920" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="conv" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111"></stop>
+      <stop offset="100%" stop-color="#2c2c2c"></stop>
+    </linearGradient>
+  </defs>
+  <rect width="1920" height="800" fill="url(#conv)"></rect>
+  <text x="50%" y="45%" text-anchor="middle" fill="#fff" font-size="48" font-family="Arial" font-weight="bold">
+    Compre seu veículo mesmo com nome negativado
+  </text>
+  <text x="50%" y="55%" text-anchor="middle" fill="#d4af37" font-size="32" font-family="Arial">
+    Pagamento somente na entrega
+  </text>
+</svg>
