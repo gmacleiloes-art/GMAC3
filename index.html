@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>GMAC Leilões | Veículos Recuperados</title>
+<title>GMAC Leilões</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -15,7 +15,7 @@ body {
     color: #333;
 }
 
-/* ANIMAÇÃO GLOBAL */
+/* ANIMAÇÕES */
 .fade {
     opacity: 0;
     transform: translateY(20px);
@@ -26,15 +26,26 @@ body {
     transform: translateY(0);
 }
 
-/* BANNER */
+/* HEADER / BANNER */
 header {
+    position: relative;
     background: url(img/banner-corporativo.png) center/cover no-repeat;
-    padding: 30px 20px 220px;
+    height: 520px;
+}
+header::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,.45);
 }
 
+/* TOPO */
 .topo {
+    position: relative;
+    z-index: 2;
     max-width: 1200px;
     margin: auto;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,54 +54,88 @@ header {
 .logo { max-width: 100px; }
 
 nav a {
-    margin-left: 18px;
+    margin-left: 20px;
     color: #d4af37;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* BOTÕES */
-.hero-buttons {
-    margin-top: 150px;
-    text-align: center;
+/* MENU MOBILE */
+.menu-mobile {
+    display: none;
+    font-size: 28px;
+    color: #d4af37;
+    cursor: pointer;
 }
 
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100%;
+    background: #111;
+    padding: 30px;
+    transition: right .4s ease;
+    z-index: 99;
+}
+.mobile-nav a {
+    display: block;
+    margin: 20px 0;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 18px;
+}
+.mobile-nav.open { right: 0; }
+
+/* HERO */
+.hero {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: #fff;
+}
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
 .hero-buttons a {
     background: #d4af37;
     color: #000;
-    padding: 16px 38px;
+    padding: 15px 40px;
     border-radius: 40px;
     font-weight: bold;
-    margin: 12px;
-    text-decoration: none;
+    margin: 10px;
     display: inline-block;
-    transition: transform .2s ease, box-shadow .2s ease;
+    text-decoration: none;
+    transition: transform .2s;
 }
-.hero-buttons a:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,.2);
-}
+.hero-buttons a:hover { transform: scale(1.05); }
 
 /* SEÇÕES */
 section {
-    padding: 60px 20px;
+    padding: 70px 20px;
 }
 
-/* TEXTO */
+/* TEXTO OPORTUNIDADE */
 .apresentacao {
     max-width: 900px;
     margin: auto;
     text-align: center;
 }
-.apresentacao h2 {
-    font-size: 28px;
-}
+.apresentacao h2 { font-size: 28px; }
 .apresentacao p {
     font-size: 18px;
     line-height: 1.6;
 }
 
-/* VÍDEO */
+/* VIDEO */
 .video-institucional {
     max-width: 900px;
     margin: auto;
@@ -140,9 +185,7 @@ section {
     box-shadow: 0 8px 25px rgba(0,0,0,.1);
     transition: transform .3s ease;
 }
-.card:hover {
-    transform: translateY(-6px);
-}
+.card:hover { transform: translateY(-6px); }
 .card img {
     width: 100%;
     border-radius: 15px;
@@ -182,19 +225,31 @@ footer {
     gap: 40px;
 }
 footer h4 { color: #d4af37; }
+iframe { width: 100%; border-radius: 10px; }
 
-iframe {
-    width: 100%;
-    border-radius: 10px;
+/* WHATSAPP */
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: #fff;
+    padding: 16px;
+    border-radius: 50%;
+    font-size: 28px;
+    text-decoration: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,.3);
+    animation: pulse 1.5s infinite;
+    z-index: 98;
 }
 
 /* MOBILE */
 @media(max-width:768px){
+    header { height: 420px; }
     nav { display: none; }
-    header { padding-bottom: 180px; }
+    .menu-mobile { display: block; }
+    .hero h1 { font-size: 26px; }
     .hero-buttons a { width: 90%; }
-    .apresentacao h2 { font-size: 24px; }
-    #timer { font-size: 34px; }
 }
 </style>
 </head>
@@ -210,18 +265,29 @@ iframe {
             <a href="#">Rastreamento</a>
             <a href="#">FAQ</a>
         </nav>
+        <div class="menu-mobile" onclick="toggleMenu()">☰</div>
     </div>
-    <div class="hero-buttons">
-        <a href="#">Ver Veículos</a>
-        <a href="#">Fazer Cadastro</a>
+
+    <div class="hero">
+        <h1>Pagamento somente na entrega</h1>
+        <div class="hero-buttons">
+            <a href="#">Ver Veículos</a>
+            <a href="#">Fazer Cadastro</a>
+        </div>
     </div>
 </header>
+
+<div class="mobile-nav" id="mobileNav">
+    <a href="#" onclick="toggleMenu()">Veículos</a>
+    <a href="#" onclick="toggleMenu()">Cadastro</a>
+    <a href="#" onclick="toggleMenu()">Rastreamento</a>
+    <a href="#" onclick="toggleMenu()">FAQ</a>
+</div>
 
 <section class="apresentacao fade">
 <h2>A oportunidade que você esperava para conquistar seu veículo</h2>
 <p>
-Veículos recuperados de financiamento da BV Financeira, com documentação regular.
-<br><br>
+Veículos recuperados de financiamento da BV Financeira, com documentação regular.<br><br>
 Pagamento somente na entrega. Processo simples, seguro e acessível.
 </p>
 </section>
@@ -240,33 +306,17 @@ Pagamento somente na entrega. Processo simples, seguro e acessível.
 <section class="veiculos fade">
 <h2 style="text-align:center">Veículos em Destaque</h2>
 <div class="cards">
-<div class="card">
-<img src="img/Yamaha-Fluo.jpg">
-<h3>Honda CG</h3>
-<span>Pagamento na entrega</span>
-</div>
-<div class="card">
-<img src="img/XRE300-2015.jpg">
-<h3>Yamaha Factor</h3>
-<span>Documentação regular</span>
-</div>
-<div class="card">
-<img src="img/CG160-2024.jpg">
-<h3>Honda Biz</h3>
-<span>Unidades limitadas</span>
-</div>
+<div class="card"><img src="img/XRE300-2015.jpg"><h3>Honda CG</h3><span>Pagamento na entrega</span></div>
+<div class="card"><img src="img/Yamaha-Fluo.jpg"><h3>Yamaha Factor</h3><span>Documentação regular</span></div>
+<div class="card"><img src="img/CG160-2024.jpg"><h3>Honda Biz</h3><span>Unidades limitadas</span></div>
 </div>
 </section>
 
 <section class="depoimentos fade">
 <h2 style="text-align:center">Depoimentos</h2>
 <div class="carousel">
-<img src="img/depoimentotakashs.jpg">
-<img src="img/depoimentoRicardo.jpg">
-<img src="img/depoimentorafael.jpg">
-<img src="img/depoimentomarcos.jpg">
-<img src="img/depoimentofernanda.jpg">
-<img src="img/depoimentobianca.jpg">
+<img src="img/depoimentobianca.jpg"><img src="img/depoimentomarcos.jpg"><img src="img/depoimentoRicardo.jpg">
+<img src="img/depoimentofernanda.jpg"><img src="img/depoimentorafael.jpg"><img src="img/depoimentotakashs.jpg">
 </div>
 </section>
 
@@ -274,7 +324,8 @@ Pagamento somente na entrega. Processo simples, seguro e acessível.
 <div class="footer-container">
 <div>
 <h4>GMAC Leilões</h4>
-<p>CNPJ: 52.654.051/0001-30<br>Tel: (14) 3197-4294<br>Bauru - SP</p>
+<p>CNPJ: 52.654.051/0001-30<br>Tel: (14) 3197-4294<br>Bauru - SP<br><br>
+Agente de Liquidação Exclusivo BV Financeira</p>
 </div>
 <div>
 <h4>Segurança</h4>
@@ -288,12 +339,17 @@ Pagamento somente na entrega. Processo simples, seguro e acessível.
 </div>
 </footer>
 
+<a class="whatsapp" href="https://wa.me/5511970512149" target="_blank">💬</a>
+
 <script>
-// FADE IN AO SCROLL
-const elements = document.querySelectorAll('.fade');
+function toggleMenu(){
+    document.getElementById('mobileNav').classList.toggle('open');
+}
+
+const faders = document.querySelectorAll('.fade');
 const show = () => {
-    elements.forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+    faders.forEach(el => {
+        if(el.getBoundingClientRect().top < window.innerHeight - 100){
             el.classList.add('show');
         }
     });
@@ -301,7 +357,6 @@ const show = () => {
 window.addEventListener('scroll', show);
 show();
 
-// TIMER
 function iniciarTemporizador() {
     const agora = new Date();
     const inicio = new Date();
