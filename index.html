@@ -15,22 +15,11 @@ body {
     color: #333;
 }
 
-/* ANIMAÇÕES */
-.fade {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all .8s ease;
-}
-.fade.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* HEADER / BANNER */
+/* HEADER */
 header {
-    position: relative;
     background: url(img/banner-corporativo.png) center/cover no-repeat;
     height: 520px;
+    position: relative;
 }
 header::after {
     content: '';
@@ -39,7 +28,6 @@ header::after {
     background: rgba(0,0,0,.45);
 }
 
-/* TOPO */
 .topo {
     position: relative;
     z-index: 2;
@@ -60,7 +48,6 @@ nav a {
     font-weight: bold;
 }
 
-/* MENU MOBILE */
 .menu-mobile {
     display: none;
     font-size: 28px;
@@ -68,6 +55,7 @@ nav a {
     cursor: pointer;
 }
 
+/* MENU MOBILE */
 .mobile-nav {
     position: fixed;
     top: 0;
@@ -76,15 +64,14 @@ nav a {
     height: 100%;
     background: #111;
     padding: 30px;
-    transition: right .4s ease;
-    z-index: 99;
+    transition: right .3s;
+    z-index: 999;
 }
 .mobile-nav a {
     display: block;
     margin: 20px 0;
     color: #d4af37;
     text-decoration: none;
-    font-size: 18px;
 }
 .mobile-nav.open { right: 0; }
 
@@ -98,7 +85,6 @@ nav a {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 20px;
     color: #fff;
 }
 .hero h1 {
@@ -108,32 +94,25 @@ nav a {
 .hero-buttons a {
     background: #d4af37;
     color: #000;
-    padding: 15px 40px;
+    padding: 14px 36px;
     border-radius: 40px;
-    font-weight: bold;
     margin: 10px;
     display: inline-block;
     text-decoration: none;
-    transition: transform .2s;
+    font-weight: bold;
 }
-.hero-buttons a:hover { transform: scale(1.05); }
 
 /* SEÇÕES */
-section {
-    padding: 70px 20px;
-}
+section { padding: 70px 20px; }
 
-/* TEXTO OPORTUNIDADE */
+/* APRESENTAÇÃO */
 .apresentacao {
     max-width: 900px;
     margin: auto;
     text-align: center;
 }
 .apresentacao h2 { font-size: 28px; }
-.apresentacao p {
-    font-size: 18px;
-    line-height: 1.6;
-}
+.apresentacao p { font-size: 18px; line-height: 1.6; }
 
 /* VIDEO */
 .video-institucional {
@@ -143,7 +122,6 @@ section {
 .video-institucional video {
     width: 100%;
     border-radius: 18px;
-    box-shadow: 0 12px 30px rgba(0,0,0,.15);
 }
 
 /* URGÊNCIA */
@@ -152,19 +130,11 @@ section {
     color: #fff;
     text-align: center;
 }
-.urgencia h2 {
-    color: #d4af37;
-    font-size: 30px;
-}
+.urgencia h2 { color: #d4af37; }
 #timer {
     font-size: 42px;
     font-weight: bold;
     color: #d4af37;
-    animation: pulse 1s infinite alternate;
-}
-@keyframes pulse {
-    from { opacity: .7; }
-    to { opacity: 1; }
 }
 
 /* VEÍCULOS */
@@ -182,10 +152,7 @@ section {
     border-radius: 20px;
     padding: 20px;
     text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,.1);
-    transition: transform .3s ease;
 }
-.card:hover { transform: translateY(-6px); }
 .card img {
     width: 100%;
     border-radius: 15px;
@@ -196,19 +163,15 @@ section {
 }
 
 /* DEPOIMENTOS */
-.depoimentos {
-    background: #fff;
-}
+.depoimentos { background: #fff; }
 .carousel {
     display: flex;
-    overflow-x: auto;
     gap: 20px;
-    scroll-snap-type: x mandatory;
+    overflow-x: auto;
 }
 .carousel img {
     width: 280px;
     border-radius: 18px;
-    scroll-snap-align: center;
 }
 
 /* FOOTER */
@@ -232,31 +195,47 @@ iframe { width: 100%; border-radius: 10px; }
     position: fixed;
     bottom: 20px;
     right: 20px;
+    width: 60px;
+    height: 60px;
     background: #25D366;
-    color: #fff;
-    padding: 16px;
     border-radius: 50%;
-    font-size: 28px;
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-shadow: 0 10px 25px rgba(0,0,0,.3);
-    animation: pulse 1.5s infinite;
-    z-index: 98;
+    z-index: 1000;
+}
+.whatsapp img {
+    width: 32px;
+    height: 32px;
 }
 
 /* MOBILE */
 @media(max-width:768px){
-    header { height: 420px; }
     nav { display: none; }
     .menu-mobile { display: block; }
+
     .hero h1 { font-size: 26px; }
     .hero-buttons a { width: 90%; }
+
+    /* WhatsApp menor no mobile */
+    .whatsapp {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+    .whatsapp img {
+        width: 26px;
+        height: 26px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<header class="fade">
+<header>
     <div class="topo">
         <img src="img/logo-gmac.png" class="logo">
         <nav>
@@ -284,26 +263,26 @@ iframe { width: 100%; border-radius: 10px; }
     <a href="#" onclick="toggleMenu()">FAQ</a>
 </div>
 
-<section class="apresentacao fade">
-<h2>A oportunidade que você esperava para conquistar seu veículo</h2>
+<section class="apresentacao">
+<h2>A oportunidade que você esperava</h2>
 <p>
-Veículos recuperados de financiamento da BV Financeira, com documentação regular.<br><br>
-Pagamento somente na entrega. Processo simples, seguro e acessível.
+Veículos recuperados de financiamento da BV Financeira.<br>
+Pagamento somente na entrega, com total segurança.
 </p>
 </section>
 
-<section class="video-institucional fade">
+<section class="video-institucional">
 <video controls>
 <source src="video/video-institucional.mp4" type="video/mp4">
 </video>
 </section>
 
-<section class="urgencia fade">
+<section class="urgencia">
 <h2>Veículos disponíveis por tempo limitado</h2>
 <div id="timer">12:00:00</div>
 </section>
 
-<section class="veiculos fade">
+<section class="veiculos">
 <h2 style="text-align:center">Veículos em Destaque</h2>
 <div class="cards">
 <div class="card"><img src="img/XRE300-2015.jpg"><h3>Honda CG</h3><span>Pagamento na entrega</span></div>
@@ -312,26 +291,36 @@ Pagamento somente na entrega. Processo simples, seguro e acessível.
 </div>
 </section>
 
-<section class="depoimentos fade">
-<h2 style="text-align:center">Depoimentos</h2>
+<section class="depoimentos">
+<h2 style="text-align:center">Depoimentos de Clientes</h2>
 <div class="carousel">
-<img src="img/depoimentobianca.jpg"><img src="img/depoimentomarcos.jpg"><img src="img/depoimentoRicardo.jpg">
-<img src="img/depoimentofernanda.jpg"><img src="img/depoimentorafael.jpg"><img src="img/depoimentotakashs.jpg">
+<img src="img/depoimentobianca.jpg">
+<img src="img/depoimentomarcos.jpg">
+<img src="img/depoimentoRicardo.jpg">
+<img src="img/depoimentofernanda.jpg">
+<img src="img/depoimentorafael.jpg">
+<img src="img/depoimentotakashs.jpg">
 </div>
 </section>
 
-<footer class="fade">
+<footer>
 <div class="footer-container">
 <div>
 <h4>GMAC Leilões</h4>
-<p>CNPJ: 52.654.051/0001-30<br>Tel: (14) 3197-4294<br>Bauru - SP<br><br>
-Agente de Liquidação Exclusivo BV Financeira</p>
+<p>
+CNPJ: 52.654.051/0001-30<br>
+Tel: (14) 3197-4294<br>
+Bauru - SP<br><br>
+Agente de Liquidação Exclusivo BV Financeira
+</p>
 </div>
+
 <div>
 <h4>Segurança</h4>
 <img src="img/leilaoseguro.png" width="120"><br><br>
 <img src="img/rastreador.jpg" width="120">
 </div>
+
 <div>
 <h4>Localização</h4>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4156702463656!2d-49.10285562547099!3d-22.337928417787076"></iframe>
@@ -339,41 +328,14 @@ Agente de Liquidação Exclusivo BV Financeira</p>
 </div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/5511970512149" target="_blank"><img src="img/WhatsApp.svg.webp" alt=""></a>
+<a class="whatsapp" href="https://wa.me/5511970512149" target="_blank">
+<img src="img/WhatsApp.svg.webp">
+</a>
 
 <script>
 function toggleMenu(){
     document.getElementById('mobileNav').classList.toggle('open');
 }
-
-const faders = document.querySelectorAll('.fade');
-const show = () => {
-    faders.forEach(el => {
-        if(el.getBoundingClientRect().top < window.innerHeight - 100){
-            el.classList.add('show');
-        }
-    });
-};
-window.addEventListener('scroll', show);
-show();
-
-function iniciarTemporizador() {
-    const agora = new Date();
-    const inicio = new Date();
-    inicio.setHours(6,0,0,0);
-    if(agora < inicio) inicio.setDate(inicio.getDate()-1);
-    const fim = new Date(inicio.getTime() + 12*60*60*1000);
-
-    setInterval(() => {
-        const diff = fim - new Date();
-        if(diff <= 0) location.reload();
-        const h = String(Math.floor(diff/3600000)).padStart(2,'0');
-        const m = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
-        const s = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
-        document.getElementById("timer").innerText = `${h}:${m}:${s}`;
-    }, 1000);
-}
-iniciarTemporizador();
 </script>
 
 </body>
