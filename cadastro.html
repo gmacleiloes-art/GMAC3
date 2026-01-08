@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
-<title>Cadastro | GMAC Leilões</title>
+<title>Cadastro Seguro | GMAC Leilões</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -13,6 +13,8 @@ body{
     background:#f4f4f4;
     color:#333
 }
+
+/* HEADER */
 header{
     background:#111;
     padding:20px
@@ -52,17 +54,17 @@ nav a{
 }
 .mobile-nav.open{right:0}
 
-/* FORM */
+/* CONTEÚDO */
 section{
-    padding:60px 20px
+    padding:70px 20px
 }
 .form-container{
-    max-width:600px;
+    max-width:700px;
     margin:auto;
     background:#fff;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.1)
+    padding:50px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15)
 }
 .form-container h1{
     text-align:center;
@@ -71,22 +73,37 @@ section{
 }
 .form-container p{
     text-align:center;
+    font-size:17px;
+    line-height:1.6;
     margin-bottom:30px
 }
+.security-box{
+    background:#f8f8f8;
+    border-left:5px solid #d4af37;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:30px;
+    font-size:15px
+}
+.security-box strong{
+    color:#111
+}
+
+/* FORM */
 form input{
     width:100%;
-    padding:14px;
+    padding:15px;
     margin-bottom:15px;
-    border-radius:10px;
+    border-radius:12px;
     border:1px solid #ccc;
     font-size:16px
 }
 form button{
     width:100%;
-    padding:16px;
+    padding:18px;
     background:#d4af37;
     border:none;
-    border-radius:30px;
+    border-radius:35px;
     font-size:18px;
     font-weight:bold;
     cursor:pointer
@@ -96,7 +113,7 @@ form button{
 footer{
     background:#1c1c1c;
     color:#ccc;
-    padding:60px 20px
+    padding:70px 20px
 }
 .footer-container{
     max-width:1200px;
@@ -105,8 +122,18 @@ footer{
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:40px
 }
-footer h4{color:#d4af37}
-iframe{width:100%;border-radius:10px}
+footer h4{
+    color:#d4af37;
+    margin-bottom:15px
+}
+footer p{
+    font-size:15px;
+    line-height:1.6
+}
+iframe{
+    width:100%;
+    border-radius:12px
+}
 
 /* WHATSAPP */
 .whatsapp{
@@ -128,6 +155,7 @@ iframe{width:100%;border-radius:10px}
 @media(max-width:768px){
     nav{display:none}
     .menu-mobile{display:block}
+    .form-container{padding:35px}
 }
 </style>
 </head>
@@ -156,8 +184,20 @@ iframe{width:100%;border-radius:10px}
 
 <section>
 <div class="form-container">
-<h1>Cadastro do Cliente</h1>
-<p>Preencha corretamente para dar continuidade no processo.</p>
+
+<h1>Cadastro Seguro do Cliente</h1>
+<p>
+Estamos aqui para te ajudar a conquistar seu veículo, mesmo que você esteja negativado.<br>
+Este cadastro é necessário para validação interna e continuidade do processo.
+</p>
+
+<div class="security-box">
+<strong>✔ Processo Seguro e Acompanhado</strong><br><br>
+• Veículos recuperados de financiamento da <strong>BV Financeira</strong><br>
+• Documentação regularizada em seu nome<br>
+• Pagamento do veículo somente na entrega<br>
+• Custos logísticos e administrativos informados com total transparência
+</div>
 
 <form onsubmit="enviarWhats(event)">
 <input type="text" id="nome" placeholder="Nome Completo" required>
@@ -169,27 +209,41 @@ iframe{width:100%;border-radius:10px}
 <input type="tel" id="telefone" placeholder="Telefone / WhatsApp" required>
 <input type="email" id="email" placeholder="E-mail">
 
-<button type="submit">Enviar Cadastro</button>
+<button type="submit">Enviar Cadastro para Validação</button>
 </form>
+
 </div>
 </section>
 
 <footer>
 <div class="footer-container">
+
 <div>
 <h4>GMAC Leilões</h4>
 <p>
 CNPJ: 52.654.051/0001-30<br>
-Tel: (14) 3197-4294<br>
-Bauru - SP<br><br>
-Agente de Liquidação Exclusivo BV Financeira
+Telefone: (14) 3197-4294<br>
+Sede Administrativa: Bauru - SP<br><br>
+Agente de Liquidação Exclusivo da <strong>BV Financeira</strong>
 </p>
 </div>
 
 <div>
-<h4>Localização</h4>
+<h4>Segurança & Transparência</h4>
+<p>
+• Empresa registrada e regularizada<br>
+• Processos documentados<br>
+• Atendimento humano especializado<br>
+• Entrega monitorada e rastreável
+</p>
+<img src="img/leilaoseguro.png" width="140">
+</div>
+
+<div>
+<h4>Localização do Pátio</h4>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4156702463656!2d-49.10285562547099!3d-22.337928417787076"></iframe>
 </div>
+
 </div>
 </footer>
 
@@ -204,7 +258,6 @@ function toggleMenu(){
 
 function enviarWhats(e){
     e.preventDefault()
-
     const dados =
 `*NOVO CADASTRO GMAC*
 Nome: ${nome.value}
