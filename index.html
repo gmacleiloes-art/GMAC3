@@ -48,6 +48,7 @@ nav a {
     font-weight: bold;
 }
 
+/* MENU MOBILE */
 .menu-mobile {
     display: none;
     font-size: 28px;
@@ -55,7 +56,6 @@ nav a {
     cursor: pointer;
 }
 
-/* MENU MOBILE */
 .mobile-nav {
     position: fixed;
     top: 0;
@@ -105,7 +105,6 @@ nav a {
 /* SEÇÕES */
 section { padding: 70px 20px; }
 
-/* APRESENTAÇÃO */
 .apresentacao {
     max-width: 900px;
     margin: auto;
@@ -174,7 +173,7 @@ section { padding: 70px 20px; }
     border-radius: 18px;
 }
 
-/* FOOTER INSTITUCIONAL */
+/* FOOTER */
 footer {
     background: #111;
     color: #ccc;
@@ -187,20 +186,7 @@ footer {
     grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
     gap: 50px;
 }
-footer h4 {
-    color: #d4af37;
-    margin-bottom: 15px;
-}
-footer p {
-    line-height: 1.6;
-    font-size: 15px;
-}
-
-/* SELLOS */
-.selos img {
-    width: 160px;
-    margin-bottom: 15px;
-}
+footer h4 { color: #d4af37; }
 
 /* MAPA */
 .footer-mapa iframe {
@@ -255,29 +241,33 @@ footer p {
 <header>
     <div class="topo">
         <img src="img/logo-gmac.png" class="logo">
+
         <nav>
-            <a href="#">Veículos</a>
-            <a href="#">Cadastro</a>
-            <a href="#">Rastreamento</a>
-            <a href="#">FAQ</a>
+            <a href="index.html">Início</a>
+            <a href="veiculos.html">Veículos</a>
+            <a href="cadastro.html">Cadastro</a>
+            <a href="rastreamento.html">Rastreamento</a>
+            <a href="faq.html">FAQ</a>
         </nav>
+
         <div class="menu-mobile" onclick="toggleMenu()">☰</div>
     </div>
 
     <div class="hero">
         <h1>Pagamento somente na entrega</h1>
         <div class="hero-buttons">
-            <a href="#">Ver Veículos</a>
-            <a href="#">Fazer Cadastro</a>
+            <a href="veiculos.html">Ver Veículos</a>
+            <a href="cadastro.html">Fazer Cadastro</a>
         </div>
     </div>
 </header>
 
 <div class="mobile-nav" id="mobileNav">
-    <a href="#" onclick="toggleMenu()">Veículos</a>
-    <a href="#" onclick="toggleMenu()">Cadastro</a>
-    <a href="#" onclick="toggleMenu()">Rastreamento</a>
-    <a href="#" onclick="toggleMenu()">FAQ</a>
+    <a href="index.html" onclick="toggleMenu()">Início</a>
+    <a href="veiculos.html" onclick="toggleMenu()">Veículos</a>
+    <a href="cadastro.html" onclick="toggleMenu()">Cadastro</a>
+    <a href="rastreamento.html" onclick="toggleMenu()">Rastreamento</a>
+    <a href="faq.html" onclick="toggleMenu()">FAQ</a>
 </div>
 
 <section class="apresentacao">
@@ -324,30 +314,20 @@ Pagamento somente na entrega, com total segurança.
 <div class="footer-container">
 
 <div>
-<h4>Sobre a GMAC Leilões</h4>
-<p>
-Somos agentes de liquidação especializados em veículos recuperados de financiamento da BV Financeira.
-Atendemos clientes negativados, oferecendo um processo seguro, transparente e com pagamento somente na entrega.
-</p>
+<h4>GMAC Leilões</h4>
 <p>
 CNPJ: 52.654.051/0001-30<br>
 Telefone: (14) 3197-4294<br>
-Bauru - SP
+Bauru - SP<br><br>
+Agente de Liquidação Exclusivo BV Financeira
 </p>
 </div>
 
-<div class="selos">
-<h4>Segurança e Confiabilidade</h4>
-<p>
-Todos os veículos possuem documentação regular e entrega rastreável em todo o Brasil.
-</p>
-<img src="img/leilaoseguro.png">
-<img src="img/rastreador.jpg">
-</div>
-
-<div class="footer-mapa">
+<div>
 <h4>Pátio Oficial</h4>
+<div class="footer-mapa">
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4156702463656!2d-49.10285562547099!3d-22.337928417787076!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bf665e2e8a346b%3A0x55123dd9fc5f8a46!2sPatio%20Bauru%20S%2FC%20Ltda%20Me!5e0!3m2!1spt-BR!2sbr!4v1767884203368!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+</div>
 </div>
 
 </div>
