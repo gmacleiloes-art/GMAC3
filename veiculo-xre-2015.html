@@ -15,69 +15,37 @@ body{
 }
 
 /* HEADER */
-header{
-    background:#111;
-    padding:20px
-}
-.topo{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center
-}
+header{background:#111;padding:20px}
+.topo{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center}
 .logo{max-width:90px}
-nav a{
-    color:#d4af37;
-    margin-left:20px;
-    text-decoration:none;
-    font-weight:bold
-}
+nav a{color:#d4af37;margin-left:20px;text-decoration:none;font-weight:bold}
 
 /* MOBILE MENU */
 .menu-mobile{display:none;font-size:28px;color:#d4af37;cursor:pointer}
-.mobile-nav{
-    position:fixed;
-    top:0;right:-100%;
-    width:260px;height:100%;
-    background:#111;
-    padding:30px;
-    transition:.4s;
-    z-index:99
-}
-.mobile-nav a{
-    display:block;
-    margin:20px 0;
-    color:#d4af37;
-    text-decoration:none;
-    font-size:18px
-}
+.mobile-nav{position:fixed;top:0;right:-100%;width:260px;height:100%;background:#111;padding:30px;transition:.4s;z-index:99}
+.mobile-nav a{display:block;margin:20px 0;color:#d4af37;text-decoration:none;font-size:18px}
 .mobile-nav.open{right:0}
 
 /* CONTEÚDO */
-section{
-    padding:60px 20px
-}
-.container{
-    max-width:1100px;
-    margin:auto
-}
+section{padding:60px 20px}
+.container{max-width:1100px;margin:auto}
 
-/* GALERIA */
-.galeria{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:15px
+/* CARROSSEL */
+.carousel{
+    display:flex;
+    overflow-x:auto;
+    gap:15px;
+    scroll-snap-type:x mandatory;
+    padding-bottom:10px
 }
-.galeria img{
-    width:100%;
-    border-radius:15px
+.carousel::-webkit-scrollbar{display:none}
+.slide{
+    min-width:90%;
+    scroll-snap-align:center
 }
-
-/* VIDEO */
-video{
+.slide img,
+.slide video{
     width:100%;
-    margin-top:25px;
     border-radius:20px;
     box-shadow:0 10px 30px rgba(0,0,0,.15)
 }
@@ -90,17 +58,8 @@ video{
     margin-top:35px;
     box-shadow:0 10px 30px rgba(0,0,0,.1)
 }
-.info h1{
-    color:#111;
-    margin-bottom:15px
-}
-.info p{
-    line-height:1.7;
-    font-size:16px
-}
-.info strong{
-    color:#111
-}
+.info h1{color:#111;margin-bottom:15px}
+.info p{line-height:1.7;font-size:16px}
 
 /* CLAUSULA */
 .clausula{
@@ -111,16 +70,10 @@ video{
     margin-top:30px;
     font-size:15px
 }
-.clausula h3{
-    margin-top:0;
-    color:#111
-}
+.clausula h3{margin-top:0;color:#111}
 
 /* CTA */
-.cta{
-    text-align:center;
-    margin-top:35px
-}
+.cta{text-align:center;margin-top:35px}
 .cta a{
     background:#d4af37;
     color:#000;
@@ -145,23 +98,15 @@ footer{
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:40px
 }
-footer h4{
-    color:#d4af37;
-    margin-bottom:15px
-}
-footer p{
-    line-height:1.6;
-    font-size:15px
-}
-iframe{
-    width:100%;
-    border-radius:12px
-}
+footer h4{color:#d4af37;margin-bottom:15px}
+footer p{line-height:1.6;font-size:15px}
+iframe{width:100%;border-radius:12px}
 
 /* MOBILE */
 @media(max-width:768px){
     nav{display:none}
     .menu-mobile{display:block}
+    .slide{min-width:100%}
 }
 </style>
 </head>
@@ -191,28 +136,31 @@ iframe{
 <section>
 <div class="container">
 
-<div class="galeria">
-<img src="xre2015/IMG-20251031-WA0006.jpg">
-<img src="xre2015/IMG-20251031-WA0007.jpg">
-<img src="xre2015/IMG-20251031-WA0008.jpg">
-<img src="xre2015/IMG-20251031-WA0009.jpg">
-<img src="xre2015/IMG-20251031-WA0010.jpg">
-<img src="xre2015/IMG-20251031-WA0016.jpg">
-</div>
+<!-- CARROSSEL -->
+<div class="carousel">
+<div class="slide"><img src="xre2015/IMG-20251031-WA0006.jpg"></div>
+<div class="slide"><img src="xre2015/IMG-20251031-WA0007.jpg"></div>
+<div class="slide"><img src="xre2015/IMG-20251031-WA0008.jpg"></div>
+<div class="slide"><img src="xre2015/IMG-20251031-WA0009.jpg"></div>
+<div class="slide"><img src="xre2015/IMG-20251031-WA0016.jpg
+    "></div>
 
+<!-- ÚLTIMO SLIDE COM VÍDEO -->
+<div class="slide">
 <video controls>
 <source src="xre2015/video-biz-125.mp4" type="video/mp4">
 </video>
+</div>
+</div>
 
 <div class="info">
 <h1>Honda CG 160 – Ano 2021</h1>
-
 <p>
 <strong>Tipo:</strong> Motocicleta<br>
 <strong>Situação:</strong> Veículo recuperado de financiamento da <strong>BV Financeira</strong><br>
-<strong>Documentação:</strong> Regularizada, transferência realizada diretamente para o comprador<br>
-<strong>Forma de Pagamento:</strong> Pagamento do veículo somente no ato da entrega<br>
-<strong>Entrega:</strong> Disponível para todo o Brasil, mediante contratação logística<br>
+<strong>Documentação:</strong> Regularizada – transferência direta para o comprador<br>
+<strong>Forma de Pagamento:</strong> Pagamento do veículo somente na entrega<br>
+<strong>Entrega:</strong> Disponível para todo o Brasil<br>
 <strong>Status:</strong> Disponível para reserva, sujeito à validação interna
 </p>
 </div>
@@ -220,10 +168,9 @@ iframe{
 <div class="clausula">
 <h3>Cláusula de Desistência</h3>
 <p>
-Após a formalização do contrato e início dos procedimentos administrativos, logísticos e documentais,
-em caso de desistência por parte do comprador, será aplicada uma multa rescisória correspondente a
-<strong>30% (trinta por cento) do valor total do veículo</strong>, destinada à cobertura de custos operacionais,
-administrativos e logísticos já realizados pela empresa.
+Após a formalização do contrato e início dos procedimentos administrativos,
+em caso de desistência do comprador será aplicada multa rescisória de
+<strong>30% do valor total do veículo</strong>, destinada à cobertura dos custos operacionais.
 </p>
 </div>
 
@@ -242,7 +189,7 @@ administrativos e logísticos já realizados pela empresa.
 <p>
 CNPJ: 52.654.051/0001-30<br>
 Telefone: (14) 3197-4294<br>
-Sede Administrativa: Bauru - SP<br><br>
+Bauru - SP<br><br>
 Agente de Liquidação Exclusivo da <strong>BV Financeira</strong>
 </p>
 </div>
@@ -250,10 +197,10 @@ Agente de Liquidação Exclusivo da <strong>BV Financeira</strong>
 <div>
 <h4>Segurança & Transparência</h4>
 <p>
-• Empresa registrada e regularizada<br>
 • Processos documentados<br>
-• Atendimento especializado<br>
-• Entrega monitorada e rastreável
+• Veículos regularizados<br>
+• Entrega rastreável<br>
+• Atendimento especializado
 </p>
 <img src="img/leilaoseguro.png" width="140">
 </div>
