@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Rastreamento | GMAC Leilões</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box}
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f4f4;
+    color:#333
+}
+
+/* HEADER */
+header{
+    background:#111;
+    padding:20px
+}
+.topo{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center
+}
+.logo{max-width:90px}
+nav a{
+    color:#d4af37;
+    margin-left:20px;
+    text-decoration:none;
+    font-weight:bold
+}
+
+/* MOBILE MENU */
+.menu-mobile{display:none;font-size:28px;color:#d4af37;cursor:pointer}
+.mobile-nav{
+    position:fixed;
+    top:0;right:-100%;
+    width:260px;height:100%;
+    background:#111;
+    padding:30px;
+    transition:.4s;
+    z-index:99
+}
+.mobile-nav a{
+    display:block;
+    margin:20px 0;
+    color:#d4af37;
+    text-decoration:none;
+    font-size:18px
+}
+.mobile-nav.open{right:0}
+
+/* CONTEÚDO */
+section{
+    padding:70px 20px
+}
+.track-container{
+    max-width:600px;
+    margin:auto;
+    background:#fff;
+    padding:50px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+    text-align:center
+}
+.track-container h1{
+    color:#111;
+    margin-bottom:10px
+}
+.track-container p{
+    font-size:16px;
+    line-height:1.6;
+    margin-bottom:30px
+}
+.security-box{
+    background:#f8f8f8;
+    border-left:5px solid #d4af37;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:30px;
+    font-size:15px;
+    text-align:left
+}
+
+/* FORM */
+form input{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:12px;
+    border:1px solid #ccc;
+    font-size:16px
+}
+form button{
+    width:100%;
+    padding:18px;
+    background:#d4af37;
+    border:none;
+    border-radius:35px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer
+}
+
+/* MENSAGEM */
+.msg{
+    display:none;
+    margin-top:25px;
+    padding:20px;
+    background:#111;
+    color:#d4af37;
+    border-radius:15px;
+    font-weight:bold
+}
+
+/* FOOTER */
+footer{
+    background:#1c1c1c;
+    color:#ccc;
+    padding:70px 20px
+}
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:40px
+}
+footer h4{color:#d4af37}
+footer p{line-height:1.6}
+iframe{width:100%;border-radius:12px}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    width:55px;height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    box-shadow:0 10px 25px rgba(0,0,0,.3);
+    z-index:98
+}
+.whatsapp img{width:28px}
+
+/* MOBILE */
+@media(max-width:768px){
+    nav{display:none}
+    .menu-mobile{display:block}
+    .track-container{padding:35px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="topo">
+<img src="img/logo-gmac.png" class="logo">
+<nav>
+<a href="index.html">Início</a>
+<a href="veiculos.html">Veículos</a>
+<a href="cadastro.html">Cadastro</a>
+<a href="faq.html">FAQ</a>
+</nav>
+<div class="menu-mobile" onclick="toggleMenu()">☰</div>
+</div>
+</header>
+
+<div class="mobile-nav" id="mobileNav">
+<a href="index.html">Início</a>
+<a href="veiculos.html">Veículos</a>
+<a href="cadastro.html">Cadastro</a>
+<a href="faq.html">FAQ</a>
+</div>
+
+<section>
+<div class="track-container">
+
+<h1>Rastreamento do Veículo</h1>
+<p>
+Acompanhe o andamento do seu processo de entrega de forma simples e segura.
+</p>
+
+<div class="security-box">
+<strong>Importante:</strong><br><br>
+O rastreamento do veículo é liberado somente após a confirmação do pagamento
+dos custos logísticos e administrativos.
+</div>
+
+<form onsubmit="verificar(event)">
+<input type="text" id="cpf" placeholder="CPF do Comprador" required>
+<input type="text" id="pacto" placeholder="Código do Pacto" required>
+
+<button type="submit">Consultar Rastreamento</button>
+</form>
+
+<div class="msg" id="msg">
+Rastreamento disponível após o pagamento pendente.
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="footer-container">
+
+<div>
+<h4>GMAC Leilões</h4>
+<p>
+CNPJ: 52.654.051/0001-30<br>
+Telefone: (14) 3197-4294<br>
+Bauru - SP<br><br>
+Agente de Liquidação Exclusivo da <strong>BV Financeira</strong>
+</p>
+</div>
+
+<div>
+<h4>Segurança & Transparência</h4>
+<p>
+• Veículos recuperados de financiamento<br>
+• Documentação regularizada<br>
+• Entrega rastreável<br>
+• Atendimento especializado
+</p>
+<img src="img/leilaoseguro.png" width="140">
+</div>
+
+<div>
+<h4>Localização do Pátio</h4>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4156702463656!2d-49.10285562547099!3d-22.337928417787076"></iframe>
+</div>
+
+</div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/5511970512149" target="_blank">
+<img src="img/WhatsApp.svg.webp">
+</a>
+
+<script>
+function toggleMenu(){
+    document.getElementById('mobileNav').classList.toggle('open')
+}
+
+function verificar(e){
+    e.preventDefault()
+    document.getElementById('msg').style.display = 'block'
+}
+</script>
+
+</body>
+</html>
