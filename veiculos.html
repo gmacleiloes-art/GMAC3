@@ -8,50 +8,38 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f4f4f4;color:#333}
-
-/* HEADER */
 header{background:#111;padding:20px}
 .topo{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center}
 .logo{max-width:90px}
 nav a{color:#d4af37;margin-left:20px;text-decoration:none;font-weight:bold}
-
-/* MOBILE MENU */
-.menu-mobile{display:none;font-size:28px;color:#d4af37;cursor:pointer}
-.mobile-nav{position:fixed;top:0;right:-100%;width:260px;height:100%;background:#111;padding:30px;transition:.4s;z-index:99}
-.mobile-nav a{display:block;margin:20px 0;color:#d4af37;text-decoration:none;font-size:18px}
-.mobile-nav.open{right:0}
-
-/* SEÇÕES */
 section{padding:60px 20px}
 
-/* URGÊNCIA */
-.urgencia{text-align:center;background:#111;color:#fff}
+.urgencia{background:#111;color:#fff;text-align:center}
 .urgencia h1{color:#d4af37}
-#timer{font-size:36px;font-weight:bold;color:#d4af37}
+.urgencia p{max-width:900px;margin:auto}
 
-/* CARDS */
 .veiculos{max-width:1200px;margin:auto}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px}
-.card{background:#fff;border-radius:20px;padding:20px;text-align:center;box-shadow:0 8px 25px rgba(0,0,0,.1)}
-.card img{width:100%;border-radius:15px}
-.card h3{margin:10px 0}
-.card p{font-size:14px}
-.card a{display:inline-block;margin-top:15px;background:#d4af37;color:#000;padding:12px 30px;border-radius:30px;text-decoration:none;font-weight:bold}
-
-/* CTA */
-.cta{text-align:center}
-.cta a{background:#111;color:#d4af37;padding:18px 45px;border-radius:40px;text-decoration:none;font-weight:bold;font-size:18px}
-
-/* FOOTER */
-footer{background:#1c1c1c;color:#ccc;padding:70px 20px}
-.footer-container{max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px}
-footer h4{color:#d4af37}
-
-/* MOBILE */
-@media(max-width:768px){
-nav{display:none}
-.menu-mobile{display:block}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:25px;margin-top:40px}
+.card{
+background:#fff;border-radius:20px;padding:20px;text-align:center;
+box-shadow:0 8px 25px rgba(0,0,0,.1)
 }
+.card img{width:100%;border-radius:15px}
+.card h3{margin:12px 0}
+.card p{font-size:14px}
+.card a{
+display:inline-block;margin-top:15px;background:#d4af37;color:#000;
+padding:12px 30px;border-radius:30px;text-decoration:none;font-weight:bold
+}
+
+footer{background:#1c1c1c;color:#ccc;padding:70px 20px;margin-top:60px}
+.footer-container{
+max-width:1200px;margin:auto;
+display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:40px
+}
+footer h4{color:#d4af37}
+iframe{width:100%;border-radius:12px}
 </style>
 </head>
 
@@ -66,99 +54,81 @@ nav{display:none}
 <a href="rastreamento.html">Rastreamento</a>
 <a href="faq.html">FAQ</a>
 </nav>
-<div class="menu-mobile" onclick="toggleMenu()">☰</div>
 </div>
 </header>
 
-<div class="mobile-nav" id="mobileNav">
-<a href="index.html">Início</a>
-<a href="cadastro.html">Cadastro</a>
-<a href="rastreamento.html">Rastreamento</a>
-<a href="faq.html">FAQ</a>
-</div>
-
 <section class="urgencia">
-<h1>Veículos com alta demanda</h1>
-<p>Disponibilidade por tempo limitado</p>
-<div id="timer">12:00:00</div>
+<h1>Veículos Recuperados de Financiamento</h1>
+<p>
+Estoque limitado de veículos provenientes da <strong>BV Financeira</strong>.  
+Alta demanda diária. Reservas sujeitas à disponibilidade.
+</p>
 </section>
 
 <section class="veiculos">
 <div class="cards">
 
-<div class="card">
-<img src="img/moto1.jpg">
-<h3>Honda CG 160</h3>
-<p>Ano: 2021<br>Recuperada de financiamento<br>BV Financeira</p>
-<a href="veiculo-moto-modelo.html">Ver Detalhes</a>
-</div>
+<!-- 20 MOTOS -->
+<div class="card"><img src="Scooter Shineray SE1 20242025/Scooter Shineray SE1 20242025 1.jpeg"><h3>Scooter Shineray SE1 - 25/26</h3><p>Alta procura.</p><a href="Scooter ShineraySE120242025.html">Ver detalhes</a></div>
+<div class="card"><img src="Yamaha Ybr 150  Factor 2018/Yamaha ybr150 factor 2018 1.jpeg"><h3>Yamaha Ybr150 Factor 2018</h3><p>Unidade disponível.</p><a href="Yamaha Ybr150 Factor 2018.html">Ver detalhes</a></div>
+<div class="card"><img src="Honda NXR 160 Bros 2016/WhatsApp Image 2026-01-11 at 17.03.48 (1).jpeg"><h3>Honda NXR 160 Bros 2016</h3><p>Documentação regular.</p><a href="Honda NXR 160 Bros 2016.html">Ver detalhes</a></div>
+<div class="card"><img src="Yamaha XTZ 250 Lander 2024/WhatsApp Image 2026-01-11 at 17.04.55.jpeg"><h3>Yamaha XTZ 250 Lander 2024</h3><p>Alta demanda.</p><a href="Yamaha XTZ 250 Lander 2024.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto5.jpg"><h3>Honda Pop 110 - 2020</h3><p>Unidade limitada.</p><a href="veiculo.html">Ver detalhes</a></div>
 
-<div class="card">
-<img src="xre2015/IMG-20251031-WA0006.jpg">
-<h3>Honda Biz 125</h3>
-<p>Ano: 2020<br>Documentação regular<br>Pagamento na entrega</p>
-<a href="veiculo-xre-2015.html">Ver Detalhes</a>
-</div>
+<div class="card"><img src="img/moto6.jpg"><h3>Yamaha Factor 150 - 2019</h3><p>Veículo revisado.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto7.jpg"><h3>Yamaha Fazer 250 - 2021</h3><p>Alta procura.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto8.jpg"><h3>Yamaha Crosser 150 - 2022</h3><p>Documentação ok.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto9.jpg"><h3>Yamaha NMax 160 - 2020</h3><p>Pagamento na entrega.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto10.jpg"><h3>Yamaha Lander 250 - 2021</h3><p>Alta demanda.</p><a href="veiculo.html">Ver detalhes</a></div>
 
-<div class="card">
-<img src="img/moto3.jpg">
-<h3>Yamaha Factor 150</h3>
-<p>Ano: 2019<br>Entrega em todo Brasil</p>
-<a href="veiculo-moto-modelo.html">Ver Detalhes</a>
-</div>
+<div class="card"><img src="img/moto11.jpg"><h3>Dafra NH 190 - 2021</h3><p>Unidade disponível.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto12.jpg"><h3>Dafra Apache 200 - 2020</h3><p>Veículo regular.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto13.jpg"><h3>Suzuki Intruder 125 - 2019</h3><p>Alta procura.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto14.jpg"><h3>Suzuki Yes 125 - 2018</h3><p>Disponível.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto15.jpg"><h3>Kawasaki Ninja 300 - 2017</h3><p>Estoque limitado.</p><a href="veiculo.html">Ver detalhes</a></div>
 
-<div class="card">
-<img src="img/moto4.jpg">
-<h3>Yamaha Fazer 250</h3>
-<p>Ano: 2022<br>Alta procura</p>
-<a href="veiculo-moto-modelo.html">Ver Detalhes</a>
-</div>
+<div class="card"><img src="img/moto16.jpg"><h3>BMW G310R - 2018</h3><p>Alta demanda.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto17.jpg"><h3>Royal Enfield 350 - 2020</h3><p>Documentação regular.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto18.jpg"><h3>KTM Duke 200 - 2019</h3><p>Unidade disponível.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto19.jpg"><h3>Shineray SHI 175 - 2022</h3><p>Alta procura.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/moto20.jpg"><h3>Shineray Jet 125 - 2021</h3><p>Pagamento na entrega.</p><a href="veiculo.html">Ver detalhes</a></div>
 
-<div class="card">
-<img src="img/moto5.jpg">
-<h3>Honda XRE 300</h3>
-<p>Ano: 2021<br>Unidades limitadas</p>
-<a href="veiculo-moto-modelo.html">Ver Detalhes</a>
-</div>
+<!-- 5 CARROS -->
+<div class="card"><img src="img/carro1.jpg"><h3>Fiat Strada - 2021</h3><p>Unidade limitada.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/carro2.jpg"><h3>Chevrolet Onix - 2020</h3><p>Alta demanda.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/carro3.jpg"><h3>Volkswagen Gol - 2019</h3><p>Documentação ok.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/carro4.jpg"><h3>Hyundai HB20 - 2021</h3><p>Disponível.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/carro5.jpg"><h3>Toyota Corolla - 2018</h3><p>Estoque limitado.</p><a href="veiculo.html">Ver detalhes</a></div>
+
+<!-- 5 TRATORES -->
+<div class="card"><img src="img/trator1.jpg"><h3>John Deere 5078E - 2019</h3><p>Alta procura.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/trator2.jpg"><h3>Massey Ferguson 4275 - 2020</h3><p>Disponível.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/trator3.jpg"><h3>Valtra A750 - 2018</h3><p>Estoque limitado.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/trator4.jpg"><h3>New Holland TL75E - 2021</h3><p>Alta demanda.</p><a href="veiculo.html">Ver detalhes</a></div>
+<div class="card"><img src="img/trator5.jpg"><h3>Case Farmall 80 - 2020</h3><p>Unidade disponível.</p><a href="veiculo.html">Ver detalhes</a></div>
 
 </div>
-</section>
-
-<section class="cta">
-<a href="cadastro.html">Iniciar Cadastro para Reserva</a>
 </section>
 
 <footer>
 <div class="footer-container">
 <div>
 <h4>GMAC Leilões</h4>
-<p>
-CNPJ: 52.654.051/0001-30<br>
-Agente de Liquidação Exclusivo BV Financeira
-</p>
+<p>CNPJ: 52.654.051/0001-30<br>Telefone: (14) 3197-4294<br><br>
+Agente de Liquidação Exclusivo BV Financeira</p>
+</div>
+<div>
+<h4>Segurança</h4>
+<p>Entrega rastreável em todo o Brasil.</p>
+<img src="img/leilaoseguro.png" width="150"><br><br>
+<img src="img/rastreador.jpg" width="150">
+</div>
+<div>
+<h4>Pátio Administrativo</h4>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4156702463656!2d-49.10285562547099!3d-22.337928417787076"></iframe>
 </div>
 </div>
 </footer>
-
-<script>
-function toggleMenu(){
-document.getElementById('mobileNav').classList.toggle('open')
-}
-function iniciarTemporizador(){
-const inicio=new Date()
-inicio.setHours(6,0,0,0)
-const fim=new Date(inicio.getTime()+12*60*60*1000)
-setInterval(()=>{
-const diff=fim-new Date()
-if(diff<=0)location.reload()
-const h=String(Math.floor(diff/3600000)).padStart(2,'0')
-const m=String(Math.floor((diff%3600000)/60000)).padStart(2,'0')
-const s=String(Math.floor((diff%60000)/1000)).padStart(2,'0')
-document.getElementById("timer").innerText=`${h}:${m}:${s}`
-},1000)
-}
-iniciarTemporizador()
-</script>
 
 </body>
 </html>
