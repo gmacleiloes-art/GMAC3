@@ -112,7 +112,7 @@ nav a {
     margin-bottom: 30px;
 }
 .hero-buttons {
-    margin-bottom: 40px; /* 🔥 Espaçamento para evitar sobreposição */
+    margin-bottom: 40px;
 }
 .hero-buttons a {
     background: #d4af37;
@@ -132,7 +132,7 @@ nav a {
 
 /* SEÇÕES */
 section {
-    padding: 80px 20px; /* 🔥 Mais espaçamento */
+    padding: 80px 20px;
 }
 
 /* APRESENTAÇÃO */
@@ -167,6 +167,21 @@ section {
     max-width: 900px;
     margin: auto;
     font-size: 18px;
+}
+
+/* DEPOIMENTOS */
+.depoimentos {
+    background: #fff;
+}
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+}
+.carousel img {
+    width: 280px;
+    border-radius: 18px;
 }
 
 /* FOOTER */
@@ -265,6 +280,17 @@ Atendimento especializado e acompanhamento em todas as etapas do processo.
 <p>
 Operação com alto volume de atendimentos e entregas realizadas em todo o Brasil, seguindo protocolos internos de validação e segurança.
 </p>
+</section>
+
+<section class="depoimentos fade">
+<h2 style="text-align:center">Depoimentos de Clientes</h2>
+<div class="carousel">
+<img src="img/depoimentobianca.jpg">
+<img src="img/depoimentomarcos.jpg">
+<img src="img/depoimentoRicardo.jpg">
+<img src="img/depoimentofernanda.jpg">
+<img src="img/depoimentorafael.jpg">
+</div>
 </section>
 
 <footer class="fade">
