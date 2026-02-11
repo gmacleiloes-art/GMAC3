@@ -5,7 +5,7 @@
 <title>GMAC Leilões | Veículos Recuperados de Financiamento</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Veículos recuperados de financiamento da BV Financeira. Processo seguro, documentação regular e pagamento do veículo condicionado à conferência no ato da entrega.">
+<meta name="description" content="Veículos recuperados de financiamento da BV Financeira. Processo seguro, documentação regular e pagamento condicionado à conferência na entrega.">
 
 <style>
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -111,6 +111,9 @@ nav a {
     line-height: 1.6;
     margin-bottom: 30px;
 }
+.hero-buttons {
+    margin-bottom: 40px; /* 🔥 Espaçamento para evitar sobreposição */
+}
 .hero-buttons a {
     background: #d4af37;
     color: #000;
@@ -120,18 +123,16 @@ nav a {
     margin: 8px;
     display: inline-block;
     text-decoration: none;
-    transition: transform .2s;
 }
 .hero-buttons a.secundario {
     background: transparent;
     border: 2px solid #d4af37;
     color: #d4af37;
 }
-.hero-buttons a:hover { transform: scale(1.05); }
 
 /* SEÇÕES */
 section {
-    padding: 70px 20px;
+    padding: 80px 20px; /* 🔥 Mais espaçamento */
 }
 
 /* APRESENTAÇÃO */
@@ -140,7 +141,10 @@ section {
     margin: auto;
     text-align: center;
 }
-.apresentacao h2 { font-size: 28px; margin-bottom: 20px; }
+.apresentacao h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
 .apresentacao p {
     font-size: 18px;
     line-height: 1.6;
@@ -165,67 +169,11 @@ section {
     font-size: 18px;
 }
 
-/* URGÊNCIA */
-.urgencia {
-    background: #111;
-    color: #fff;
-    text-align: center;
-}
-.urgencia h2 {
-    color: #d4af37;
-    font-size: 30px;
-}
-#timer {
-    font-size: 42px;
-    font-weight: bold;
-    color: #d4af37;
-}
-
-/* VEÍCULOS */
-.veiculos {
-    max-width: 1200px;
-    margin: auto;
-}
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap: 25px;
-}
-.card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 8px 25px rgba(0,0,0,.1);
-}
-.card img {
-    width: 100%;
-    border-radius: 15px;
-}
-.card span {
-    color: #d4af37;
-    font-weight: bold;
-}
-
-/* DEPOIMENTOS */
-.depoimentos {
-    background: #fff;
-}
-.carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-}
-.carousel img {
-    width: 280px;
-    border-radius: 18px;
-}
-
 /* FOOTER */
 footer {
     background: #1c1c1c;
     color: #ccc;
-    padding: 60px 20px;
+    padding: 70px 20px;
 }
 .footer-container {
     max-width: 1200px;
@@ -235,7 +183,6 @@ footer {
     gap: 40px;
 }
 footer h4 { color: #d4af37; }
-iframe { width: 100%; border-radius: 10px; }
 
 /* WHATSAPP */
 .whatsapp {
@@ -255,12 +202,13 @@ iframe { width: 100%; border-radius: 10px; }
 
 /* MOBILE */
 @media(max-width:768px){
-    header { height: 420px; }
+    header { height: 460px; }
     nav { display: none; }
     .menu-mobile { display: block; }
-    .hero h1 { font-size: 26px; }
+    .hero h1 { font-size: 24px; }
     .hero p { font-size: 16px; }
-    .hero-buttons a { width: 90%; }
+    .hero-buttons a { width: 90%; display:block; margin:10px auto; }
+    section { padding: 60px 20px; }
 }
 </style>
 </head>
@@ -282,7 +230,7 @@ iframe { width: 100%; border-radius: 10px; }
     <div class="hero">
         <h1>Veículos recuperados de financiamento</h1>
         <p>
-            Operação estruturada para liquidação de veículos da BV Financeira, com processo validado, documentação regular e pagamento do valor do veículo condicionado à conferência no ato da entrega.
+            Operação estruturada para liquidação de veículos da BV Financeira, com processo validado, documentação regular e pagamento condicionado à conferência na entrega.
         </p>
         <div class="hero-buttons">
             <a href="veiculos.html">Ver Veículos</a>
@@ -301,7 +249,8 @@ iframe { width: 100%; border-radius: 10px; }
 <section class="apresentacao fade">
 <h2>Processo transparente e acompanhado</h2>
 <p>
-Veículos recuperados de financiamento da <strong>BV Financeira</strong>, com documentação regular e transferência realizada diretamente para o nome do comprador.<br><br>
+Veículos recuperados de financiamento da <strong>BV Financeira</strong>, com documentação regular e transferência realizada diretamente para o nome do comprador.
+<br><br>
 Atendimento especializado e acompanhamento em todas as etapas do processo.
 </p>
 </section>
@@ -318,39 +267,22 @@ Operação com alto volume de atendimentos e entregas realizadas em todo o Brasi
 </p>
 </section>
 
-<section class="urgencia fade">
-<h2>Estoque rotativo com disponibilidade limitada</h2>
-<div id="timer">12:00:00</div>
-</section>
-
-<section class="veiculos fade">
-<h2 style="text-align:center">Veículos em Destaque</h2>
-<div class="cards">
-<div class="card"><img src="img/XRE300-2015.jpg"><h3>Honda CG</h3><span>Disponibilidade limitada</span></div>
-<div class="card"><img src="img/Yamaha-Fluo.jpg"><h3>Yamaha Factor</h3><span>Alta procura</span></div>
-<div class="card"><img src="img/CG160-2024.jpg"><h3>Honda Biz</h3><span>Consulte disponibilidade</span></div>
-</div>
-</section>
-
-<section class="depoimentos fade">
-<h2 style="text-align:center">Depoimentos de Clientes</h2>
-<div class="carousel">
-<img src="img/depoimentobianca.jpg">
-<img src="img/depoimentomarcos.jpg">
-<img src="img/depoimentoRicardo.jpg">
-<img src="img/depoimentofernanda.jpg">
-<img src="img/depoimentorafael.jpg">
-</div>
-</section>
-
 <footer class="fade">
 <div class="footer-container">
+
 <div>
 <h4>GMAC Leilões</h4>
 <p>
 CNPJ: 52.654.051/0001-30<br>
-Bauru - SP<br><br>
 Operação especializada em veículos recuperados de financiamento.
+</p>
+</div>
+
+<div>
+<h4>Endereço</h4>
+<p>
+R. Fortunato Resta, 11-35 - Jardim Jussara,<br>
+Bauru - SP, 17050-040, Brasil
 </p>
 </div>
 
@@ -358,14 +290,10 @@ Operação especializada em veículos recuperados de financiamento.
 <h4>Institucional</h4>
 <p>
 <a href="faq.html" style="color:#ccc">Perguntas Frequentes</a><br>
-<a href="#" style="color:#ccc">Termos do Processo</a>
+<a href="#">Termos do Processo</a>
 </p>
 </div>
 
-<div>
-<h4>Localização</h4>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3690.4156702463656!2d-49.10285562547099!3d-22.337928417787076"></iframe>
-</div>
 </div>
 </footer>
 
@@ -388,25 +316,6 @@ function show(){
 }
 window.addEventListener('scroll', show);
 show();
-
-function iniciarTemporizador(){
-    let inicio = new Date();
-    inicio.setHours(6,0,0,0);
-    let fim = new Date(inicio.getTime() + 12*60*60*1000);
-
-    setInterval(()=>{
-        let diff = fim - new Date();
-        if(diff <= 0){
-            document.getElementById("timer").innerText = "Reservas disponíveis a partir de amanhã";
-            return;
-        }
-        let h = String(Math.floor(diff/3600000)).padStart(2,'0');
-        let m = String(Math.floor((diff%3600000)/60000)).padStart(2,'0');
-        let s = String(Math.floor((diff%60000)/1000)).padStart(2,'0');
-        document.getElementById("timer").innerText = `${h}:${m}:${s}`;
-    },1000);
-}
-iniciarTemporizador();
 </script>
 
 </body>
