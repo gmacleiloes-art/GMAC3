@@ -123,11 +123,10 @@ nav a {
     margin: 8px;
     display: inline-block;
     text-decoration: none;
+    transition: transform .2s;
 }
-.hero-buttons a.secundario {
-    background: transparent;
-    border: 2px solid #d4af37;
-    color: #d4af37;
+.hero-buttons a:hover {
+    transform: scale(1.05);
 }
 
 /* SEÇÕES */
@@ -249,7 +248,7 @@ footer h4 { color: #d4af37; }
         </p>
         <div class="hero-buttons">
             <a href="veiculos.html">Ver Veículos</a>
-            <a href="faq.html" class="secundario">Entenda como funciona</a>
+            <a href="faq.html">Entenda como funciona</a>
         </div>
     </div>
 </header>
